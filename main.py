@@ -2,15 +2,24 @@ import pygame
 from constants import *
 
 def main():
-    pygame.init()
-    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    pygame.init()  #initailize pygame
+    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))     #set screen size
 
-    while True:
+    clock = pygame.time.Clock()                                         #setup game clock
+    dt = 0
+
+
+    while True:                                                         #Setting up game loop
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+            
         screen.fill("black")
         pygame.display.flip()
+
+        dt = clock.tick(60) /1000                                       #framerate to 60 FPS
+
+        
 
 
 
